@@ -1,0 +1,53 @@
+# === Build Artifacts ===
+*.o
+*.obj
+*.a
+*.so
+*.out
+*.exe
+*.bin
+*.elf
+
+# === Executables ===
+sphere
+main
+run
+
+# === Build Folders ===
+/build/
+/bin/
+/dist/
+
+# === CMake Files ===
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# === Make-specific ===
+*.d
+*.dSYM
+
+# === GLFW/GLAD/GLM Temporary Files ===
+*.log
+*.tmp
+*.cache
+
+# === Shader Cache ===
+*.spv
+*.shaderc
+
+# === IDEs / Editors ===
+.idea/
+*.swp
+*.swo
+*.bak
+*.backup
+
+# === Compile Commands (for LSPs) ===
+compile_commands.json
+compile_flags.txt
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
