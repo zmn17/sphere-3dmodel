@@ -1,0 +1,47 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-I/usr/include",
+      "-I/usr/include/GLFW",
+      "-c",
+      "-o",
+      "bin/main.o",
+      "src/main.cpp"
+    ],
+    "directory": "/home/zee/dev/sphere",
+    "file": "/home/zee/dev/sphere/src/main.cpp",
+    "output": "/home/zee/dev/sphere/bin/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-I/usr/include",
+      "-I/usr/include/GLFW",
+      "-c",
+      "-o",
+      "bin/sphere.o",
+      "src/sphere.cpp"
+    ],
+    "directory": "/home/zee/dev/sphere",
+    "file": "/home/zee/dev/sphere/src/sphere.cpp",
+    "output": "/home/zee/dev/sphere/bin/sphere.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-I/usr/include",
+      "-I/usr/include/GLFW",
+      "-c",
+      "-o",
+      "bin/utils.o",
+      "utils/utils.cpp"
+    ],
+    "directory": "/home/zee/dev/sphere",
+    "file": "/home/zee/dev/sphere/utils/utils.cpp",
+    "output": "/home/zee/dev/sphere/bin/utils.o"
+  }
+]
