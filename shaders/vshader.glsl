@@ -9,5 +9,5 @@ uniform mat4 mv_matrix;
 
 void main(void){
 	gl_Position = proj_matrix * mv_matrix * vec4(pos, 1.0);
-	tx = texCoord;
+	tc = texCoord;
 }

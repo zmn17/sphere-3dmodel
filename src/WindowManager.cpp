@@ -1,14 +1,17 @@
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 #include "../include/WindowManager.h"
-#include "glfw3.h"
 #include <cstdlib>
 #include <iostream>
 #include <cstring>
 
-WindowManager::WindowManager(int& width, int& height, const std::string& title):mWidth(width),mHeight(height),mTitle(title){
+WindowManager::WindowManager(int width, int height, const std::string& title):mWidth(width),mHeight(height),mTitle(title){
 	init(width,height,title);
 }		
 
-void WindowManager::init(int& width, int& height, const std::string& title){
+WindowManager::~WindowManager(){}
+
+void WindowManager::init(int width, int height, const std::string& title){
 	
 	// GLFW initialization
 	if(!glfwInit()){
@@ -27,10 +30,19 @@ void WindowManager::init(int& width, int& height, const std::string& title){
 	if(!mWindow){
 		std::cerr<<"ERROR: GLFW window creation failed."<<std::endl;
 		glfwTerminate();
+		exit(EXIT_FAILURE);
 	}
 
 	// OpenGL context
 	glfwMakeContextCurrent(mWindow);
+
+	// glew init
+	if(glewInit() != GLEW_OK){
+		std::cerr<<"GLEW initialization failed!"<<std::endl;
+		glfwTerminate();
+		exit(EXIT_FAILURE);
+	}
+
 	// For debugging
 	glEnable(GL_DEBUG_OUTPUT);
 	// vsync
@@ -47,5 +59,5 @@ void WindowManager::destroy(GLFWwindow* window){
 
 int WindowManager::getWidth(){return mWidth;}
 int WindowManager::getHeight(){return mHeight;}
-const std::string WindowManager::getTitle(){return mTitle;}
+const std::string& WindowManager::getTitle(){return mTitle;}
 
