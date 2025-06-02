@@ -22,10 +22,8 @@
 ---
 
 ## 📸 Preview
-
-*(Add a GIF or image of the rendered sphere here)*  
 > _Example:_  
-> ![sphere-preview](./preview.gif)
+> ![sphere-preview](./sphere-model)
 
 ---
 
