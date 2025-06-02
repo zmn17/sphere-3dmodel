@@ -102,39 +102,40 @@ g++ main.cpp -o sphere -lGL -lGLEW -lglfw
 
 **Vertex Shader (`vshader.glsl`)**:
 ```glsl
-#version 330 core
-layout (location = 0) in vec3 position;
-layout (location = 1) in vec2 texCoord;
+#version 460
 
+layout(location = 0) in vec3 pos;
+layout(location = 1) in vec2 texCoord;
+
+out vec2 tc;
 uniform mat4 proj_matrix;
 uniform mat4 mv_matrix;
 
-out vec2 fragTexCoord;
-
-void main() {
-    fragTexCoord = texCoord;
-    gl_Position = proj_matrix * mv_matrix * vec4(position, 1.0);
+void main(void){
+	gl_Position = proj_matrix * mv_matrix * vec4(pos, 1.0);
+	tc = texCoord;
 }
 ```
 
 **Fragment Shader (`fshader.glsl`)**:
 ```glsl
-#version 330 core
-in vec2 fragTexCoord;
-out vec4 fragColor;
+#version 460
 
-uniform sampler2D texture0;
+in vec2 tc;
+out vec4 color;
 
-void main() {
-    fragColor = texture(texture0, fragTexCoord);
+layout(binding=0) uniform sampler2D samp;
+
+void main(void){
+	color = texture(samp, tc);
 }
+
 ```
 
 ---
 
 ## 📚 Credits
 
-- Sphere math & UV logic inspired by common geometric mapping techniques.
 - Texture: [NASA Earth texture](https://visibleearth.nasa.gov/)
 
 ---
@@ -150,4 +151,4 @@ This project is open source and available under the [MIT License](LICENSE).
 Feel free to reach out or contribute!
 
 > GitHub: [@zmn17](https://github.com/zmn17)  
-> Email: *your-email@example.com*
+> Email: *zmnahm17@gmail.com*
