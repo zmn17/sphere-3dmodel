@@ -7,9 +7,9 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <iostream>
-#include "../include/WindowManager.h"
+#include "../external/include/Utils.h"
+#include "../external/include/WindowManager.h"
 #include "../include/Sphere.h"
-#include "../include/Utils.h"
 
 // Vertex Array objects
 #define numVAOs 1
